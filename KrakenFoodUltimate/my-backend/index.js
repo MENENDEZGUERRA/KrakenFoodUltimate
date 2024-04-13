@@ -77,7 +77,50 @@ app.post('/api/login', async (req, res) => {
 });
   
   
+// Route to add an area
+app.post('/api/areas', async (req, res) => {
+    try {
+      const { nombre, tipo, capacidad_maxima } = req.body;
+      const newArea = await pool.query(
+        'INSERT INTO Area (nombre, tipo, capacidad_maxima) VALUES ($1, $2, $3) RETURNING *',
+        [nombre, tipo, capacidad_maxima]
+      );
+      res.json(newArea.rows[0]);
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).json({ error: 'Server error' });
+    }
+  });
   
+  // Route to add a plate
+  app.post('/api/plates', async (req, res) => {
+    try {
+      const { nombre, descripcion, precio } = req.body;
+      const newPlate = await pool.query(
+        'INSERT INTO Plato (nombre, descripcion, precio) VALUES ($1, $2, $3) RETURNING *',
+        [nombre, descripcion, precio]
+      );
+      res.json(newPlate.rows[0]);
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).json({ error: 'Server error' });
+    }
+  });
+  
+  // Route to add a beverage
+  app.post('/api/beverages', async (req, res) => {
+    try {
+      const { nombre, descripcion, precio } = req.body;
+      const newBeverage = await pool.query(
+        'INSERT INTO Bebida (nombre, descripcion, precio) VALUES ($1, $2, $3) RETURNING *',
+        [nombre, descripcion, precio]
+      );
+      res.json(newBeverage.rows[0]);
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).json({ error: 'Server error' });
+    }
+  });
   
   
   
