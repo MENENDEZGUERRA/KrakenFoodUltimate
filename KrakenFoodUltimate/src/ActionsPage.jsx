@@ -3,6 +3,8 @@ import Logo from './Logo';
 import AddArea from './AddComponents/AddArea';
 import AddPlate from './AddComponents/AddPlate';
 import AddBeverage from './AddComponents/AddBeverage';
+import KitchenScreen from './MenuDisplays/KitchenScreen';
+import BarScreen from './MenuDisplays/BarScreen';
 
 function ActionsPage() {
   const [displayComponent, setDisplayComponent] = useState(null);
@@ -24,6 +26,16 @@ function ActionsPage() {
   const handleAddBeverage = () => {
     clearArea();
     setDisplayComponent(<AddBeverage />);
+  };
+
+  const handleKitchenScreen = () => {
+    clearArea();
+    setDisplayComponent(<KitchenScreen/>);
+  };
+
+  const handleBarScreen = () => {
+    clearArea();
+    setDisplayComponent(<BarScreen/>);
   };
 
   return (
@@ -52,52 +64,16 @@ function ActionsPage() {
   );
 }
 
-function handleTakeOrder() {
-  // Implement logic to handle taking orders
-}
-
-function handleKitchenScreen() {
-  // Implement logic to display kitchen screen
-}
-
-function handleBarScreen() {
-  // Implement logic to display bar screen
-}
-
-function handlePrintOrder() {
-  // Implement logic to print order
-}
-
-function handleCloseAccount() {
-  // Implement logic to close account
-}
-
-function handlePrintInvoice() {
-  // Implement logic to print invoice
-}
-
-function handlePlatesReport() {
-  // Implement logic to generate plates report
-}
-
-function handleOrderTimeReport() {
-  // Implement logic to generate order time report
-}
-
-function handleAverageDiningTimeReport() {
-  // Implement logic to generate average dining time report
-}
-
-function handleComplaintsByPersonReport() {
-  // Implement logic to generate complaints by person report
-}
-
-function handleComplaintsByDishReport() {
-  // Implement logic to generate complaints by dish report
-}
-
-function handleWaiterEfficiencyReport() {
-  // Implement logic to generate waiter efficiency report
-}
+// Define placeholder functions for other button actions
+function handleTakeOrder() {}
+function handlePrintOrder() {}
+function handleCloseAccount() {}
+function handlePrintInvoice() {}
+function handlePlatesReport() {}
+function handleOrderTimeReport() {}
+function handleAverageDiningTimeReport() {}
+function handleComplaintsByPersonReport() {}
+function handleComplaintsByDishReport() {}
+function handleWaiterEfficiencyReport() {}
 
 export default ActionsPage;

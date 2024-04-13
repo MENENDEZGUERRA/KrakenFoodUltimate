@@ -121,9 +121,31 @@ app.post('/api/areas', async (req, res) => {
       res.status(500).json({ error: 'Server error' });
     }
   });
+
+// Route to fetch all plates
+app.get('/api/plates', async (req, res) => {
+    try {
+      const plates = await pool.query('SELECT * FROM Plato');
+      res.json({ plates: plates.rows }); // Wrap the plates data in an object for consistency
+    } catch (err) {
+      console.error('Error fetching plates:', err);
+      res.status(500).json({ error: 'Failed to fetch plates' }); // Provide a more specific error message
+    }
+  });
   
+  // Route to fetch all beverages
+  app.get('/api/beverages', async (req, res) => {
+    try {
+      const beverages = await pool.query('SELECT * FROM Bebida');
+      res.json({ beverages: beverages.rows }); // Wrap the beverages data in an object for consistency
+    } catch (err) {
+      console.error('Error fetching beverages:', err);
+      res.status(500).json({ error: 'Failed to fetch beverages' }); // Provide a more specific error message
+    }
+  });
   
-  
+
+
   
 
 const PORT = process.env.PORT || 3001;
