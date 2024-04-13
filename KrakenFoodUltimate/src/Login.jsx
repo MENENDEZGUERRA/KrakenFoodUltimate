@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Login() {
+function Login({ onLoginSuccess }) {
   const [nombreUsuario, setNombreUsuario] = useState('');
   const [contraseña, setContraseña] = useState('');
   const [error, setError] = useState('');
@@ -34,7 +34,8 @@ function Login() {
         // Login successful
         console.log('Login successful:', data);
         setError('');
-        // Redirect user to dashboard or desired page
+        // Call the onLoginSuccess callback
+        onLoginSuccess();
       } else {
         // Login failed
         setError(data.error);
