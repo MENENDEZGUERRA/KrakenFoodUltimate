@@ -5,6 +5,7 @@ import AddPlate from './AddComponents/AddPlate';
 import AddBeverage from './AddComponents/AddBeverage';
 import KitchenScreen from './MenuDisplays/KitchenScreen';
 import BarScreen from './MenuDisplays/BarScreen';
+import AddTable from './AddComponents/AddTable';
 
 function ActionsPage() {
   const [displayComponent, setDisplayComponent] = useState(null);
@@ -38,6 +39,11 @@ function ActionsPage() {
     setDisplayComponent(<BarScreen/>);
   };
 
+  const handleAddTable = () => {
+    clearArea();
+    setDisplayComponent(<AddTable/>);
+  }
+
   return (
     <div>
       <Logo />
@@ -56,6 +62,7 @@ function ActionsPage() {
         <button onClick={handleComplaintsByDishReport}>Complaints by Dish Report</button>
         <button onClick={handleWaiterEfficiencyReport}>Waiter Efficiency Report</button>
         <button onClick={handleAddArea}>Add Area</button>
+        <button onClick={handleAddTable}>Add Table</button>
         <button onClick={handleAddPlate}>Add Plate</button>
         <button onClick={handleAddBeverage}>Add Beverage</button>
       </div>

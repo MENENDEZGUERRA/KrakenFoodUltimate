@@ -92,6 +92,21 @@ app.post('/api/areas', async (req, res) => {
     }
   });
   
+// Route to add a table
+app.post('/api/tables', async (req, res) => {
+    try {
+      const { area_id, capacidad, estado } = req.body;
+      const newTable = await pool.query(
+        'INSERT INTO Mesa (area_id, capacidad, estado) VALUES ($1, $2, $3) RETURNING *',
+        [area_id, capacidad, estado]
+      );
+      res.json(newTable.rows[0]);
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).json({ error: 'Server error' });
+    }
+  });
+  
   // Route to add a plate
   app.post('/api/plates', async (req, res) => {
     try {
