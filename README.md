@@ -26,7 +26,7 @@ Creado por: Menéndez Guerra
 ![BDD](GitMedia/Proyecto2BDD.drawio.png)
 
 # Adición de platillos
-![BDD](GitMedia/GitMedia/AddPlate.png)
+![BDD](GitMedia/AddPlate.png)
 
 # Visualización de lo ingresado en postgresql
 ![PG4](GitMedia/KitchenScreen.png)
