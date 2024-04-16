@@ -1,10 +1,10 @@
 # KrakenFoodUltimate
 Restaurant Administration Web Application
 
-#Descripción:
+# Descripción:
 Proyecto hecho en solitario cómo proyecto 2
 
-#Tecnologías:
+# Tecnologías:
 Frontend: Vite
 Backend: ExpresJS y Postgresql
 
@@ -12,21 +12,21 @@ Kraken Food es una plataforma de gestión y análisis de restaurantes diseñada 
 
 Creado por: Menéndez Guerra
 
-#Página de LogIn
+# Página de LogIn
 ![LogIn](GitMedia/LogIn.png)
 ![LogIn](GitMedia/logExample.png)
 
-#Guardado de contraseña encriptado
+# Guardado de contraseña encriptado
 ![LogIn](GitMedia/Cifrado.png)
 
-#Página Principal
+# Página Principal
 ![Main](GitMedia/Main.png)
 
-#Diseño de Base de datos
+# Diseño de Base de datos
 ![BDD](GitMedia/Proyecto2BDD.drawio.png)
 
-#Adición de platillos
+# Adición de platillos
 ![BDD](GitMedia/GitMedia/AddPlate.png)
 
-#Visualización de lo ingresado en postgresql
+# Visualización de lo ingresado en postgresql
 ![PG4](GitMedia/KitchenScreen.png)
